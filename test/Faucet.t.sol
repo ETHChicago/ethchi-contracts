@@ -78,9 +78,11 @@ contract FaucetTest is Test {
 
         assertFalse(initialClaimAmount == newClaimAmount, "claims amounts must be different");
 
+
         address payable user = payable(address(0x114));
         vm.startPrank(user);
         faucet.setClaimAmount(newClaimAmount);
+        vm.stopPrank();
     }
 
     function test_Donate() public {
