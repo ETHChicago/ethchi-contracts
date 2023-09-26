@@ -3,6 +3,14 @@ pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
 import "../src/Faucet.sol";
+import "test/Wallet.sol";
+
+// struct Wallet {
+//     address addr;
+//     uint256 publicKeyX;
+//     uint256 publicKeyY;
+//     uint256 privateKey;
+// }
 
 contract FaucetTest is Test {
 
@@ -91,4 +99,26 @@ contract FaucetTest is Test {
         assertTrue(address(faucet).balance == 11 ether);
     }
 
+    function test_EmptyWallet() public {
+        // Faucet faucet = new Faucet{value: 10 ether}();
+        Wallet wallet = new Wallet();
+
+        address payable user = payable(address(0x111));
+
+        wallet.setWallet(user);
+
+        assertTrue(wallet.getBalance(user) == 0);
+        
+        Faucet faucet = new Faucet{value: 10 ether}();
+        faucet.claimTokens{value: 0}(user);
+
+    }
+
 }
+
+// struct Wallet {
+//     address addr;
+//     uint256 publicKeyX;
+//     uint256 publicKeyY;
+//     uint256 privateKey;
+// }
