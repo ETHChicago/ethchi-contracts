@@ -3,17 +3,15 @@ pragma solidity ^0.8.20;
 
 import "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 import "../lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
-contract MyToken is ERC721, ERC721URIStorage, Ownable {
+contract MyToken is ERC721, ERC721URIStorage {
     uint256 private _nextTokenId;
 
-    constructor(address initialOwner)
+    constructor()
         ERC721("ETHCHI Holiday Collectible 2023", "ETHCHI_XMAS_2023")
-        Ownable(initialOwner)
     {}
 
-    function safeMint(address to, string memory uri) public onlyOwner {
+    function safeMint(address to, string memory uri) public {
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
