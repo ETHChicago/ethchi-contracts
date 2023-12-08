@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 import "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 import "../lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract MyToken is ERC721, ERC721URIStorage {
+contract HolidayCollectible2023 is ERC721, ERC721URIStorage {
     uint256 private _nextTokenId;
 
     constructor()
