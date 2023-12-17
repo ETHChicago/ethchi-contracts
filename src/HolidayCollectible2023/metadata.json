@@ -1,0 +1,20 @@
+{
+    "title": "Immutable Spirit",
+    "Author": "Twinrafters",
+    "Music": "Cullah",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "ETHChicago Holiday Collectible 2023"
+        },
+        "description": {
+            "type": "string",
+            "description": "Chicago themed holiday collectible for ETHChicago community"
+        },
+        "image": {
+            "type": "string",
+            "description": "https://bafybeiggtzavg43u27kvsgncrarg5preklzfzahq65lyom5cesouipakpa.ipfs.w3s.link"
+        }
+    }
+}
