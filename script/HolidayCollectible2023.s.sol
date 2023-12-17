@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import "forge-std/Script.sol";
-import "../src/HolidayCollectible2023.sol";
+import "../src/HolidayCollectible2023/HolidayCollectible2023.sol";
 
 contract HolidayCollectible2023Deploy is Script {
     function run() external {
