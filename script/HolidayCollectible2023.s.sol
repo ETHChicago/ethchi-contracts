@@ -9,7 +9,7 @@ contract HolidayCollectible2023Deploy is Script {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployerPrivateKey);
 
-        HolidayCollectible2023 holidayCollectible2023 = new HolidayCollectible2023();
+        HolidayCollectible2023 holidayCollectible2023 = new HolidayCollectible2023(address(this));
 
         vm.stopBroadcast();
     }
