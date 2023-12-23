@@ -71,4 +71,18 @@ contract HolidayCollectible2023Test is Test {
         holidayCollectible.transferOwnership(user1);
         assertEq(holidayCollectible.owner(), user1);
     }
+
+    // can mint directly to a list of addresses
+    function test_Airdrop() public {
+        address[] memory recipients = new address[](3);
+        recipients[0] = address(0x1);
+        recipients[1] = address(0x2);
+        recipients[2] = address(0x3);
+
+        holidayCollectible.airdrop(recipients);
+
+        assertEq(holidayCollectible.balanceOf(address(0x1), 0), 1);
+        assertEq(holidayCollectible.balanceOf(address(0x2), 1), 1);
+        assertEq(holidayCollectible.balanceOf(address(0x3), 2), 1);
+    }
 }

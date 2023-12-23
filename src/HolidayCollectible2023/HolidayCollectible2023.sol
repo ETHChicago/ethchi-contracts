@@ -55,4 +55,14 @@ contract HolidayCollectible2023 is ERC1155, Ownable {
         nextId = nextId + amount;
     }
 
+    // this can be cheaper than batch minting and then transferring
+    function airdrop(address[] memory recipients)
+        public
+        onlyOwner
+    {
+        for (uint256 i = 0; i < recipients.length; i++) {
+            mint(recipients[i]);
+        }
+    }
+
 }
