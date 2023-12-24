@@ -39,17 +39,16 @@ contract HolidayCollectible2023 is ERC1155, Ownable {
         onlyOwner
     {
 
-        // the array of ids should increment by 1 from nextId  to nextId + amount
         uint256[] memory ids = new uint256[](amount);
-        for (uint256 i = 0; i < amount; i++) {
-            ids[i] = nextId + i;
-        }
-        
-        // amounts should all be 1
         uint256[] memory amounts = new uint256[](amount);
+
         for (uint256 i = 0; i < amount; i++) {
+            // the array of ids should increment by 1 from nextId  to nextId + amount
+            ids[i] = nextId + i;
+            // amounts should all be 1
             amounts[i] = 1;
         }
+        
 
         _mintBatch(to, ids, amounts, "");
         nextId = nextId + amount;
