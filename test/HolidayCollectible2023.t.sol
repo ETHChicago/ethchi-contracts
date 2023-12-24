@@ -86,5 +86,15 @@ contract HolidayCollectible2023Test is Test {
         assertEq(holidayCollectible.balanceOf(address(0x3), 2), 1);
     }
 
+    function test_LargeAidrop() public {
+        address[] memory recipients = new address[](100);
+        for (uint256 i = 0; i < 100; i++) {
+            // no need for us to use different addresses here
+            recipients[i] = address(0x1);
+        }
+
+        holidayCollectible.airdrop(recipients);
+    }
+
 
 }
