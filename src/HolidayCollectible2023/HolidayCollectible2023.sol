@@ -7,6 +7,8 @@ import "../../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 contract HolidayCollectible2023 is ERC1155, Ownable {
     bool public mintOpen = true; 
     uint256 public nextId = 0;
+    string public name = "ETHChi Holiday Collectible 2023";
+
 
     modifier canMint() {
         require(mintOpen, "Minting is not open");
@@ -14,7 +16,7 @@ contract HolidayCollectible2023 is ERC1155, Ownable {
     }
 
     constructor(address initialOwner)
-        ERC1155("https://ipfs.io/ipfs/bafkreiewve5mn7rxion3i7i7olhoskt272oicurj4f6kiysh3hjtrpiqha")
+        ERC1155("https://ipfs.io/ipfs/bafkreigmjozoggujrjz57ogqampohxr5kibfnitzc4onswan2xrl2w6g34")
         Ownable(initialOwner)
     {}
 
