@@ -16,7 +16,7 @@ contract HolidayCollectible2023 is ERC1155, Ownable {
     }
 
     constructor(address initialOwner)
-        ERC1155("https://ipfs.io/ipfs/bafkreigmjozoggujrjz57ogqampohxr5kibfnitzc4onswan2xrl2w6g34")
+        ERC1155("https://ipfs.io/ipfs/bafkreiahhnk2nn4lybphh4yj2b2swvp5uvzmpzv3xvfd45fsritoqgcq44")
         Ownable(initialOwner)
     {}
 
